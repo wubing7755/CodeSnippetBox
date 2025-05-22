@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestData>
+	<!-- 基础数据类型测试 -->
+	<Primitives>
+		<Primitive>
+			<IntValue>42</IntValue>
+			<FloatValue>3.14159</FloatValue>
+			<BoolValue>true</BoolValue>
+			<StringValue>Hello二进制</StringValue>
+			<Base64Data>QTY2MSBVQSBQYWdl</Base64Data>
+			</Primitive>
+	</Primitives>
+
+	<!-- 嵌套结构测试 -->
+	<Person id="1001">
+		<Name>张伟</Name>
+		<Age>30</Age>
+		<Address>
+			<City>北京</City>
+			<ZipCode>100000</ZipCode>
+		</Address>
+		<Skills>
+			<Skill level="5">C#</Skill>
+			<Skill level="3">Python</Skill>
+		</Skills>
+	</Person>
+
+	<!-- 数组/列表测试 -->
+	<Products>
+		<Product>
+			<ID>P001</ID>
+			<Name>键盘</Name>
+			<Price>299.00</Price>
+		</Product>
+		<Product>
+			<ID>P002</ID>
+			<Name>鼠标</Name>
+			<Price>199.00</Price>
+		</Product>
+	</Products>
+
+	<!-- 特殊字符测试 -->
+	<SpecialChars>
+		<SpecialChar>
+			<AngleBrackets>&lt;&gt;</AngleBrackets>
+			<Ampersand>&amp;</Ampersand>
+			<Chinese>中文测试</Chinese>
+			<Emoji>😊✓</Emoji>
+		</SpecialChar>
+	</SpecialChars>
+
+	<!-- 空值/空白测试 -->
+	<EdgeCases>
+		<EdgeCase>
+			<EmptyElement/>
+			<Whitespace>   </Whitespace>
+		</EdgeCase>
+	</EdgeCases>
+</TestData>
