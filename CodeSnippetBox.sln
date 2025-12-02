@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeRunner", "CodeRunner\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRunner", "TestRunner\TestRunner.csproj", "{9A926469-6C7B-47EC-A5D2-93F938CB7713}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocReader", "DocReader\DocReader.csproj", "{5049A69E-38D3-491F-81AD-BBE58B3B35A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{9A926469-6C7B-47EC-A5D2-93F938CB7713}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A926469-6C7B-47EC-A5D2-93F938CB7713}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A926469-6C7B-47EC-A5D2-93F938CB7713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5049A69E-38D3-491F-81AD-BBE58B3B35A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5049A69E-38D3-491F-81AD-BBE58B3B35A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5049A69E-38D3-491F-81AD-BBE58B3B35A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5049A69E-38D3-491F-81AD-BBE58B3B35A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5DA75759-AD69-456C-B10A-309CC7B417C2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{9A926469-6C7B-47EC-A5D2-93F938CB7713} = {0D702870-FC90-4A03-BB5E-C38F7492D2DE}
+		{5049A69E-38D3-491F-81AD-BBE58B3B35A8} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BCE9003-FBCB-4627-B9E4-208245C4C712}
