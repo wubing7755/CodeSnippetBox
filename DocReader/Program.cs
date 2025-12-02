@@ -2,36 +2,52 @@
 
 public static class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        LogHelper.Write(DocCs.OutputTitle);
-        Console.Write("请输入内容文件夹路径：");
-        string? folderPath = Console.ReadLine()?.Trim('"');
+        string? inputFolder;
+        string? outputFolder;
 
-        Console.Write("请输入要处理的 docx 文件路径：");
-        string? docxPath = Console.ReadLine()?.Trim('"');
-
-        if (!Directory.Exists(folderPath))
+        if (args.Length >= 2)
         {
-            LogHelper.Write("❌ 文件夹不存在。");
+            // 从命令行参数获取
+            inputFolder = args[0];
+            outputFolder = args[1];
+            LogHelper.Write($"从命令行参数获取:");
+            LogHelper.Write($"输入文件夹: {inputFolder}");
+            LogHelper.Write($"输出路径: {outputFolder}");
+        }
+        else
+        {
+            // 从控制台输入获取
+            Console.Write("请输入\"输入文件夹\"路径：");
+            inputFolder = Console.ReadLine()?.Trim('"');
+
+            Console.Write("请输入\"输出文件夹\"路径：");
+            outputFolder = Console.ReadLine()?.Trim('"');
+        }
+
+        if (!Directory.Exists(inputFolder) || !Directory.Exists(outputFolder))
+        {
+            LogHelper.Write("False: 文件夹不存在。");
             return;
         }
 
-        if (!File.Exists(docxPath))
+        try
         {
-            LogHelper.Write("❌ Docx 文件不存在。");
-            return;
+            LogHelper.Write($"输入文件夹: {inputFolder}");
+            LogHelper.Write($"输出文件夹: {outputFolder}");
+            
+            var filePath = Path.Combine(outputFolder, "output.docx");
+            DocHelper.BuildDocStructure(inputFolder, filePath);
+            DocHelper.ProcessDocument(inputFolder, filePath);
+            
+            LogHelper.Write($"文档生成完成: {outputFolder}");
         }
-
-        string outputPath = Path.Combine(
-            Path.GetDirectoryName(docxPath)!,
-            Path.GetFileNameWithoutExtension(docxPath) + DocCs.FileSuffix
-        );
-
-        File.Copy(docxPath, outputPath, overwrite: true);
-
-        DocHelper.BuildStructureAndInsert(folderPath, outputPath);
-        DocHelper.ProcessDocument(folderPath, outputPath);
+        catch (Exception ex)
+        {
+            LogHelper.Write($"生成文档时发生错误: {ex.Message}");
+            LogHelper.Write($"详细错误: {ex}");
+        }
     }
 }
     

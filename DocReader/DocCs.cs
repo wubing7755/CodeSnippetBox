@@ -13,4 +13,6 @@ public static class DocCs
     public const int CodeFontSizePt = 12;
     
     public const string LogFile = "log.txt";
+
+    public const string FileName = "output.docx";
 }
